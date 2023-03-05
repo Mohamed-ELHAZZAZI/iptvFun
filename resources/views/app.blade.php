@@ -6,7 +6,7 @@
   @vite('resources/css/app.css')
   @stack('styles')
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden bg-white dark:bg-gray-900">
   
   <x-navigation.nav />
 

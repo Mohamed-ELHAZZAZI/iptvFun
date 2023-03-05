@@ -40,4 +40,7 @@
     </div>
 </header>
 <x-slider.brand-slider />
+
+<x-section.feature />
+
 @endsection
