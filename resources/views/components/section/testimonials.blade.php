@@ -1,9 +1,8 @@
-{{-- <h1 class="text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto my-14 xl:my-20 text-gray-700 dark:text-white">Happy Customers, Happy Service: Hear What Our IPTV Users Have to Say!</h1> --}}
 <div class="flex items-center justify-center bg-gradient-to-t from-violet-200 to-pink-100  dark:from-[#0e1827] dark:to-slate-800 pb-16">
     <div class="w-full px-5 text-gray-800">
         <div class="w-full max-w-6xl mx-auto">
             <div class="text-center max-w-xl mx-auto">
-                <h1 class="text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto mt-14 xl:mt-20 text-gray-700 dark:text-white">Happy Customers, Happy Service: Hear What Our IPTV Users Have to Say!</h1>
+                <span class=" flex text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto mt-14 xl:mt-20 text-gray-700 dark:text-white">Happy Customers, Happy Service: Hear What Our IPTV Users Have to Say!</span>
                 <div class="text-center mb-10">
                     <span class="inline-block w-1 h-1 rounded-full bg-[#dd0066] ml-1"></span>
                     <span class="inline-block w-3 h-1 rounded-full bg-[#dd0066] ml-1"></span>
@@ -17,10 +16,10 @@
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-300 p-5 text-gray-800 dark:bg-[#0e1828] dark:text-white dark:border-gray-600 font-light mb-6">
                         <div class="w-full flex mb-4 items-center">
                             <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                <img src="https://i.pravatar.cc/100?img=10" alt="">
+                                <img width="100" height="100" src="https://i.pravatar.cc/100?img=10" alt="">
                             </div>
                             <div class="flex-grow pl-3">
-                                <h6 class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Kenzie Edgar.</h6>
+                                <span class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Kenzie Edgar.</span>
                             </div>
                         </div>
                         <div class="w-full">
@@ -30,10 +29,10 @@
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-300 p-5 text-gray-800 dark:bg-[#0e1828] dark:text-white dark:border-gray-600 font-light mb-6">
                         <div class="w-full flex mb-4 items-center">
                             <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                <img src="https://i.pravatar.cc/100?img=7" alt="">
+                                <img width="100" height="100" src="https://i.pravatar.cc/100?img=7" alt="">
                             </div>
                             <div class="flex-grow pl-3">
-                                <h6 class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Stevie Tifft.</h6>
+                                <span class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Stevie Tifft.</span>
                             </div>
                         </div>
                         <div class="w-full">
@@ -45,10 +44,10 @@
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-300 p-5 text-gray-800 dark:bg-[#0e1828] dark:text-white dark:border-gray-600 font-light mb-6">
                         <div class="w-full flex mb-4 items-center">
                             <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                <img src="https://i.pravatar.cc/100?img=11" alt="">
+                                <img width="100" height="100" src="https://i.pravatar.cc/100?img=11" alt="">
                             </div>
                             <div class="flex-grow pl-3">
-                                <h6 class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Tommie Ewart.</h6>
+                                <span class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Tommie Ewart.</span>
                             </div>
                         </div>
                         <div class="w-full">
@@ -58,10 +57,10 @@
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-300 p-5 text-gray-800 dark:bg-[#0e1828] dark:text-white dark:border-gray-600 font-light mb-6">
                         <div class="w-full flex mb-4 items-center">
                             <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                <img src="https://i.pravatar.cc/100?img=65" alt="">
+                                <img width="100" height="100" src="https://i.pravatar.cc/100?img=65" alt="">
                             </div>
                             <div class="flex-grow pl-3">
-                                <h6 class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Charlie Howse.</h6>
+                                <span class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Charlie Howse.</span>
                             </div>
                         </div>
                         <div class="w-full">
@@ -73,10 +72,10 @@
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-300 p-5 text-gray-800 dark:bg-[#0e1828] dark:text-white dark:border-gray-600 font-light mb-6">
                         <div class="w-full flex mb-4 items-center">
                             <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                <img src="https://i.pravatar.cc/100?img=30" alt="">
+                                <img width="100" height="100" src="https://i.pravatar.cc/100?img=30" alt="">
                             </div>
                             <div class="flex-grow pl-3">
-                                <h6 class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Nevada Herbertson.</h6>
+                                <span class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Nevada Herbertson.</span>
                             </div>
                         </div>
                         <div class="w-full">
@@ -86,10 +85,10 @@
                     <div class="w-full mx-auto rounded-lg bg-white border border-gray-300 p-5 text-gray-800 dark:bg-[#0e1828] dark:text-white dark:border-gray-600 font-light mb-6">
                         <div class="w-full flex mb-4 items-center">
                             <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                                <img src="https://i.pravatar.cc/100?img=57" alt="">
+                                <img width="100" height="100" src="https://i.pravatar.cc/100?img=57" alt="">
                             </div>
                             <div class="flex-grow pl-3">
-                                <h6 class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Kris Stanton.</h6>
+                                <span class="font-bold text-sm uppercase text-gray-600 dark:text-gray-200">Kris Stanton.</span>
                             </div>
                         </div>
                         <div class="w-full">

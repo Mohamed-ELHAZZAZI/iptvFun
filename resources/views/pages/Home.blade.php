@@ -20,7 +20,7 @@
                     </p>
 
                     <button
-                        class="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#f83584] rounded-lg lg:w-auto hover:bg-[#dd0066] focus:outline-none focus:bg-[#dd0066]"
+                        class="w-full px-5 py-2 mt-6 text-sm font-semibold tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#f83584] rounded-lg lg:w-auto hover:bg-[#dd0066] focus:outline-none focus:bg-[#dd0066]"
                     >
                         Shop Now
                     </button>
