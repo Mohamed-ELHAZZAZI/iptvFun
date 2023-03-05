@@ -10,7 +10,7 @@
                         class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl"
                     >
                         Best place to choose <br />
-                        your <span class="text-[#e3329d]">clothes</span>
+                        your <span class="text-[#e3329d]">IPTV</span>
                     </h1>
 
                     <p class="mt-3 text-gray-600 dark:text-gray-400">
