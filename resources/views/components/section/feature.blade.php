@@ -1,5 +1,12 @@
-<h1 class="text-center xl:col-span-3 md:col-span-2 col-span-1 font-bold sm:text-3xl text-xl mx-4 my-14 xl:my-20 text-gray-700 dark:text-white">Explore a World of Entertainment with Our IPTV Features</h1>
-<div class="container grid grid-cols-1  gap-8 mx-auto pb-8  xl:pb-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3 px-12">
+<h1 class="text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto mt-14 xl:mt-20 text-gray-700 dark:text-white">Explore a World of Entertainment with Our IPTV Features</h1>
+<div class="text-center mb-10">
+  <span class="inline-block w-1 h-1 rounded-full bg-[#dd0066] ml-1"></span>
+  <span class="inline-block w-3 h-1 rounded-full bg-[#dd0066] ml-1"></span>
+  <span class="inline-block sm:w-56 w-40 h-1 rounded-full bg-[#dd0066]"></span>
+  <span class="inline-block w-3 h-1 rounded-full bg-[#dd0066] ml-1"></span>
+  <span class="inline-block w-1 h-1 rounded-full bg-[#dd0066] ml-1"></span>
+</div>
+<div class="container grid grid-cols-1  gap-8 mx-auto pb-8  xl:pb-20 pt-8 xl:gap-16 md:grid-cols-2 xl:grid-cols-3 px-12">
   <div class="space-y-3 ">
       <span class="inline-block p-3 text-[#dd0066] bg-[#ffc6f2] rounded-full dark:text-white dark:bg-[#f83584]">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 87.83 90">

@@ -43,4 +43,5 @@
 
 <x-section.feature />
 
+<x-section.testimonials />
 @endsection
