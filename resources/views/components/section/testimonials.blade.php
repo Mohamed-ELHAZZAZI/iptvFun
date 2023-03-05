@@ -4,7 +4,6 @@
             <div class="text-center max-w-xl mx-auto">
                 <span class=" flex text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto mt-14 xl:mt-20 text-gray-700 dark:text-white">Happy Customers, Happy Service: Hear What Our IPTV Users Have to Say!</span>
                 <div class="text-center mb-10">
-                    <span class="inline-block w-1 h-1 rounded-full bg-[#dd0066] ml-1"></span>
                     <span class="inline-block w-3 h-1 rounded-full bg-[#dd0066] ml-1"></span>
                     <span class="inline-block sm:w-56 w-40 h-1 rounded-full bg-[#dd0066]"></span>
                     <span class="inline-block w-3 h-1 rounded-full bg-[#dd0066] ml-1"></span>
