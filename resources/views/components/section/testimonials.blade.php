@@ -1,4 +1,4 @@
-<div class="flex items-center justify-center bg-gradient-to-t from-violet-200 to-pink-100  dark:from-[#0e1827] dark:to-slate-800 pb-16">
+<div class="flex items-center justify-center bg-gradient-to-t from-violet-200 to-pink-100  dark:from-[#12233b] dark:to-slate-800 pb-16">
     <div class="w-full px-5 text-gray-800">
         <div class="w-full max-w-6xl mx-auto">
             <div class="text-center max-w-xl mx-auto">

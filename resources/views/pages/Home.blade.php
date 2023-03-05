@@ -44,4 +44,6 @@
 <x-section.feature />
 
 <x-section.testimonials />
+
+<x-section.pricing />
 @endsection
