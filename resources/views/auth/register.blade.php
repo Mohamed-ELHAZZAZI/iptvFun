@@ -14,9 +14,17 @@
             <form class="w-full max-w-md">
                 <img class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
     
-                <h1 class="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign In</h1>
+                <h1 class="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign Up</h1>
     
                 <div class="relative flex items-center mt-8">
+                    <span class="absolute">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </span>
+    
+                    <input type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Full name">
+                </div>
+
+                <div class="relative flex items-center mt-4">
                     <span class="absolute">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -35,13 +43,15 @@
     
                     <input type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
                 </div>
+                
+                
     
                 <div class="mt-6">
                     <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#dd0066] rounded-lg hover:bg-[#cf2474] focus:outline-none  focus:ring-opacity-50">
-                        Sign in
+                        Register
                     </button>
     
-                    <p class="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
+                    <p class="mt-4 text-center text-gray-600 dark:text-gray-400">or sign up with</p>
     
                     <a href="#" class="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <svg class="w-6 h-6 mx-2" viewBox="0 0 40 40">
@@ -51,12 +61,12 @@
                             <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#1976D2" />
                         </svg>
     
-                        <span class="mx-2">Sign in with Google</span>
+                        <span class="mx-2">Sign up with Google</span>
                     </a>
     
                     <div class="mt-6 text-center ">
-                        <a href="{{route('register')}}" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
-                            Don’t have an account yet? Sign up
+                        <a href="{{ route('login') }}" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                            Already have an account? Sign in
                         </a>
                     </div>
                 </div>
