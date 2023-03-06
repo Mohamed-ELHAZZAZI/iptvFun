@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
@@ -23,8 +25,8 @@ class UsersController extends Controller
     {
         $SignUpFields = $request->validate(
             [
-                'Firstname' => ['required', 'string', 'max:255'],
-                'Lastname' => ['required', 'string', 'max:255'],
+                'firstName' => ['required', 'string', 'max:255'],
+                'lastName' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'email', Rule::unique('users', 'email')],
                 'password' => ['required', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'],
             ],
@@ -53,7 +55,7 @@ class UsersController extends Controller
             return redirect('/');
         }
 
-        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput();
+        return back()->withErrors(['email' => 'Invalid Credentials'])->withInput($request->only('email'));
     }
 
     public function showProfile()
@@ -67,5 +69,49 @@ class UsersController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+
+    public function updateInfo(Request $request)
+    {
+        $info = $request->validate(
+            [
+                'firstName' => ['required', 'string', 'max:255'],
+                'lastName' => ['required', 'string', 'max:255'],
+                'email' => 'required|email|unique:users,email,' . auth()->user()->id,
+            ],
+        );
+
+        auth()->user()->firstName = $info['firstName'];
+        auth()->user()->lastName = $info['lastName'];
+        auth()->user()->email = $info['email'];
+        auth()->user()->save();
+        return redirect()->back()->with('successInfo', 'Your profile information was updated successfully!');
+    }
+
+    public function updatePass(Request $request)
+    {
+
+        $pass = Validator::make(
+            $request->all(),
+            [
+                'current_password' => 'required',
+                'new_password' => ['required', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'],
+            ],
+            ['new_password.regex' => 'The password must contain at least one special character.']
+        );
+
+        if ($pass->fails()) {
+            return redirect()->back()->with('passError', $pass->errors()->messages());
+        }
+
+
+        if (!Hash::check($request->current_password, auth()->user()->password)) {
+            return redirect()->back()->with('passError', ['incorrect' => ['Incorrect password']]);
+        }
+
+        auth()->user()->password = bcrypt($request->new_password);
+        auth()->user()->save();
+
+        return redirect()->back()->with('successPass', 'Password changed successfully.');
     }
 }

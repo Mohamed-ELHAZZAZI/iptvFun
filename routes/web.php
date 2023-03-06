@@ -26,3 +26,5 @@ Route::post('/loginUser', [UsersController::class, 'authenticate'])->middleware(
 
 Route::get('/profile', [UsersController::class, 'showProfile'])->middleware('auth')->name('profile');
 Route::post('/logout', [UsersController::class, 'logout'])->middleware('auth')->name('logout');
+Route::post('/updateUser', [UsersController::class, 'updateInfo'])->middleware('auth')->name('updateInfo');
+Route::post('/updatePass', [UsersController::class, 'updatePass'])->middleware('auth')->name('updatePass');
