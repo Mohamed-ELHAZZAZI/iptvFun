@@ -1,5 +1,5 @@
 
-<section class="bg-white dark:bg-gray-900 pb-10  px-5 lg:px-20">
+<section id="pricing" class="bg-white dark:bg-gray-900 pb-10  px-5 lg:px-20">
     <div class="text-center max-w-xl mx-auto">
         <span class=" flex text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto mt-14 xl:mt-16 text-gray-700 dark:text-white">The Best IPTV Plans to Fit Your Lifestyle!</span>
         <div class="text-center mb-10">
@@ -45,7 +45,7 @@
                 
                 <h4 class="mt-2 text-3xl font-semibold text-gray-100">$99 <span class="text-base font-normal text-gray-400">for 1 year</span></h4>
             
-                <p class="mt-4 text-gray-500 dark:text-gray-300">Affordable 1 year IPTV plan with a wide range of channels, catch-up TV, and high-quality streaming.</p>
+                <p class="mt-4 text-gray-300">Affordable 1 year IPTV plan with a wide range of channels, catch-up TV, and high-quality streaming.</p>
 
 
                 <x-section.pricing-features :dark="true"/>

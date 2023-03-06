@@ -1,5 +1,5 @@
 
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-white dark:bg-gray-900" id="FAQ">
     <div class="text-center max-w-xl mx-auto">
         <span class=" flex text-center md:max-w-2xl font-bold sm:text-3xl text-xl mx-4 md:mx-auto mt-14 xl:mt-16 text-gray-700 dark:text-white">Learn More About Our IPTV Service: Frequently Asked Questions</span>
         <div class="text-center mb-10">

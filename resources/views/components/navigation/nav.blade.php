@@ -64,18 +64,18 @@
                 <div class="flex flex-col md:flex-row md:mx-6">
                     <a
                         class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-[#f83584] dark:hover:text-[#f83584] md:mx-4 md:my-0 hover:bg-[#00000014] dark:hover:bg-[#ffffff0a] px-2 py-1 rounded"
-                        href="#"
+                        href="/"
                         >Home</a
                     >
                     <a
                         class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-[#f83584] dark:hover:text-[#f83584] md:mx-4 md:my-0 hover:bg-[#00000014] dark:hover:bg-[#ffffff0a] px-2 py-1 rounded"
-                        href="#"
-                        >Shop</a
+                        href="/#pricing"
+                        >Pricing</a
                     >
                     <a
                         class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-[#f83584] dark:hover:text-[#f83584] md:mx-4 md:my-0 hover:bg-[#00000014] dark:hover:bg-[#ffffff0a] px-2 py-1 rounded"
-                        href="#"
-                        >Contact</a
+                        href="/#FAQ"
+                        >FAQ</a
                     >
                     <a
                         class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-[#f83584] dark:hover:text-[#f83584] md:mx-4 md:my-0 hover:bg-[#00000014] dark:hover:bg-[#ffffff0a] px-2 py-1 rounded"
@@ -85,7 +85,12 @@
                 </div>
             </div>
         </div>
-        
+        <a
+            href="/login"
+            class="w-full ml-auto cursor-pointer px-5 py-2 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#13202e] dark:bg-[#81479e] rounded-lg lg:w-auto dark:hover:bg-[#7c389e] focus:outline-none dark:focus:bg-[#7c389e]"
+        >
+            Login
+        </a>
         <button
             aria-label="Change to dark/light mode"
             id="changeDarkMode"

@@ -16,13 +16,13 @@
             </a>
 
             <div class="flex flex-wrap justify-center mt-6 -mx-4">
-                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Reddit"> Home </a>
+                <a href="/" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Home"> Home </a>
                 
-                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Reddit"> About </a>
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="About"> About </a>
                 
-                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Reddit"> Pricing </a>
+                <a href="/#pricing" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Pricing"> Pricing </a>
 
-                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Reddit"> Privacy </a>
+                <a href="/#FAQ" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-[#dd0066] dark:text-gray-300 dark:hover:text-[#f83584]" aria-label="Frequently asked questions"> FAQ </a>
 
             </div>
 

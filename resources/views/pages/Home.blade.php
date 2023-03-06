@@ -13,17 +13,16 @@
                         your <span class="text-[#e3329d]">IPTV</span>
                     </h1>
 
-                    <p class="mt-3 text-gray-600 dark:text-gray-400">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Porro beatae error laborum ab amet sunt
-                        recusandae? Reiciendis natus perspiciatis optio.
+                    <p class="mt-3 mb-6 text-gray-600 dark:text-gray-400">
+                        Find your perfect IPTV service on our platform. We offer a curated selection of options based on channel selection, picture quality, and pricing. Choose us for the ultimate IPTV experience.
                     </p>
 
-                    <button
-                        class="w-full px-5 py-2 mt-6 text-sm font-semibold tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#f83584] rounded-lg lg:w-auto hover:bg-[#dd0066] focus:outline-none focus:bg-[#dd0066]"
+                    <a
+                    href="#pricing"
+                        class="w-full cursor-pointer px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#f83584] rounded-lg lg:w-auto hover:bg-[#dd0066] focus:outline-none focus:bg-[#dd0066]"
                     >
-                        Shop Now
-                    </button>
+                    Stream Smarter
+                    </a>
                 </div>
             </div>
 
