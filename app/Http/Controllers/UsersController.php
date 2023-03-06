@@ -22,7 +22,8 @@ class UsersController extends Controller
     {
         $SignUpFields = $request->validate(
             [
-                'name' => ['required', 'string', 'max:255'],
+                'Firstname' => ['required', 'string', 'max:255'],
+                'Lastname' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'email', Rule::unique('users', 'email')],
                 'password' => ['required', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/'],
             ],

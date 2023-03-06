@@ -28,12 +28,12 @@
               <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
                   <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">First name</label>
-                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-2 dark:text-gray-100 dark:bg-transparent block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dd0066] sm:text-sm sm:leading-6" value="{{auth()->user()->name}}">
+                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-2 dark:text-gray-100 dark:bg-transparent block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dd0066] sm:text-sm sm:leading-6" value="{{auth()->user()->Firstname}}">
                 </div>
   
                 <div class="col-span-6 sm:col-span-3">
                   <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">Last name</label>
-                  <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-2 dark:text-gray-100 dark:bg-transparent block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dd0066] sm:text-sm sm:leading-6">
+                  <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-2 dark:text-gray-100 dark:bg-transparent block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dd0066] sm:text-sm sm:leading-6"  value="{{auth()->user()->Lastname}}">
                 </div>
   
                 <div class="col-span-6 sm:col-span-4">
