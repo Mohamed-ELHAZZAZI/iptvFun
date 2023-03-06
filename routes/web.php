@@ -25,3 +25,4 @@ Route::post('/storeUser', [UsersController::class, 'store'])->middleware('guest'
 Route::post('/loginUser', [UsersController::class, 'authenticate'])->middleware('guest')->name('loginUser');
 
 Route::get('/profile', [UsersController::class, 'showProfile'])->middleware('auth')->name('profile');
+Route::post('/logout', [UsersController::class, 'logout'])->middleware('auth')->name('logout');
