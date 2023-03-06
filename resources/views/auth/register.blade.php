@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
-
+    
 </head>
-<body>
+<body onload="rr" class="overflow-x-hidden bg-white dark:bg-gray-900">
     <section class="bg-white dark:bg-gray-900 my-6">
         <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
-            <form class="w-full max-w-md">
+            <form class="w-full max-w-md" method="POST" action="{{ route('storeUser') }}">
+                @csrf
                 <img class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
     
-                <h1 class="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign Up</h1>
-    
-                <div class="relative flex items-center mt-8">
+                <h1 class="mt-3 mb-8 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign Up</h1>
+                @if (count($errors) != 0)
+                <div class="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Info</span>
+                    <div>
+                      <span class="font-medium">{{ $errors->first() }}</span>
+                    </div>
+                </div>
+                @endif
+                <div class="relative flex items-center ">
                     <span class="absolute">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </span>
     
-                    <input type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Full name">
+                    <input name="name" type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Full name" value="{{old('name')}}">
                 </div>
 
                 <div class="relative flex items-center mt-4">
@@ -31,7 +40,7 @@
                         </svg>
                     </span>
     
-                    <input type="email" class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Email address">
+                    <input name="email" type="email" class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Email address" value="{{old('email')}}">
                 </div>
     
                 <div class="relative flex items-center mt-4">
@@ -41,13 +50,13 @@
                         </svg>
                     </span>
     
-                    <input type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
+                    <input name="password" type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
                 </div>
                 
                 
     
                 <div class="mt-6">
-                    <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#dd0066] rounded-lg hover:bg-[#cf2474] focus:outline-none  focus:ring-opacity-50">
+                    <button type="submit" class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#dd0066] rounded-lg hover:bg-[#cf2474] focus:outline-none  focus:ring-opacity-50">
                         Register
                     </button>
     
@@ -73,5 +82,7 @@
             </form>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    @vite(['resources/js/app.js'])
 </body>
 </html>

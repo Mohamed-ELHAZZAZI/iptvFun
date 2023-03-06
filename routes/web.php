@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login', [UsersController::class, 'showLogin'])->name('login');
-Route::get('/register', [UsersController::class, 'showRegister'])->name('register');
+Route::get('/login', [UsersController::class, 'showLogin'])->middleware('guest')->name('login');
+Route::get('/register', [UsersController::class, 'showRegister'])->middleware('guest')->name('register');
+Route::post('/storeUser', [UsersController::class, 'store'])->middleware('guest')->name('storeUser');
+Route::post('/loginUser', [UsersController::class, 'authenticate'])->middleware('guest')->name('loginUser');
