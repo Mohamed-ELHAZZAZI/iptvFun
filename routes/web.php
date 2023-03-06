@@ -23,3 +23,5 @@ Route::get('/login', [UsersController::class, 'showLogin'])->middleware('guest')
 Route::get('/register', [UsersController::class, 'showRegister'])->middleware('guest')->name('register');
 Route::post('/storeUser', [UsersController::class, 'store'])->middleware('guest')->name('storeUser');
 Route::post('/loginUser', [UsersController::class, 'authenticate'])->middleware('guest')->name('loginUser');
+
+Route::get('/profile', [UsersController::class, 'showProfile'])->middleware('auth')->name('profile');

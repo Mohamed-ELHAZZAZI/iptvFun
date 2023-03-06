@@ -53,4 +53,9 @@ class UsersController extends Controller
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput();
     }
+
+    public function showProfile()
+    {
+        return view('pages.profile');
+    }
 }
