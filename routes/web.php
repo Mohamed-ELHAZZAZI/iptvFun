@@ -21,10 +21,10 @@ Route::get('/', function () {
 
 Route::get('/login', [UsersController::class, 'showLogin'])->middleware('guest')->name('login');
 Route::get('/register', [UsersController::class, 'showRegister'])->middleware('guest')->name('register');
-Route::post('/storeUser', [UsersController::class, 'store'])->middleware('guest')->name('storeUser');
-Route::post('/loginUser', [UsersController::class, 'authenticate'])->middleware('guest')->name('loginUser');
+Route::post('/user/store', [UsersController::class, 'store'])->middleware('guest')->name('user.store');
+Route::post('/user/login', [UsersController::class, 'authenticate'])->middleware('guest')->name('user.login');
 
 Route::get('/profile', [UsersController::class, 'showProfile'])->middleware('auth')->name('profile');
 Route::post('/logout', [UsersController::class, 'logout'])->middleware('auth')->name('logout');
-Route::post('/updateUser', [UsersController::class, 'updateInfo'])->middleware('auth')->name('updateInfo');
-Route::post('/updatePass', [UsersController::class, 'updatePass'])->middleware('auth')->name('updatePass');
+Route::post('/user/update/info', [UsersController::class, 'updateInfo'])->middleware('auth')->name('user.update.info');
+Route::post('/user/update/password', [UsersController::class, 'updatePass'])->middleware('auth')->name('user.update.pass');

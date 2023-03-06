@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="mt-5 md:col-span-2 md:mt-0">
-        <form action="{{route('updateInfo')}}" method="POST">
+        <form action="{{route('user.update.info')}}" method="POST">
           @csrf
           <div class="overflow-hidden shadow sm:rounded-md">
             <div class="bg-white dark:bg-[#1d2530] px-4 py-5 sm:p-6">
@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="mt-5 md:col-span-2 md:mt-0">
-        <form action="{{route('updatePass')}}" method="POST">
+        <form action="{{route('user.update.pass')}}" method="POST">
           @csrf
           <div class="overflow-hidden shadow sm:rounded-md">
             <div class="bg-white dark:bg-[#1d2530] px-4 py-5 sm:p-6">

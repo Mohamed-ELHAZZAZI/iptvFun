@@ -11,7 +11,7 @@
 <body onload="rr" class="overflow-x-hidden bg-white dark:bg-gray-900">
     <section class="bg-white dark:bg-gray-900 my-6">
         <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
-            <form class="w-full max-w-md" method="POST" action="{{ route('storeUser') }}">
+            <form class="w-full max-w-md" method="POST" action="{{ route('user.store') }}">
                 @csrf
                 <img class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
     
