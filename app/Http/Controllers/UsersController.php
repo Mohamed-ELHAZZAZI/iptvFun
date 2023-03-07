@@ -7,18 +7,23 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
 {
-    public function showLogin()
+    public function showLogin(Request $request)
     {
-        return view('auth.login');
+        return view('auth.login', [
+            'redirect' => $request->redirect
+        ]);
     }
 
-    public function showRegister()
+    public function showRegister(Request $request)
     {
-        return view('auth.register');
+        return view('auth.register', [
+            'redirect' => $request->redirect
+        ]);
     }
 
     public function store(Request $request)
@@ -39,6 +44,11 @@ class UsersController extends Controller
 
         auth()->login($user);
 
+        $redirect = $request->redirect ? $request->redirect : null;
+        if ($redirect) {
+            return Redirect::to($redirect);
+        }
+
         return redirect('/');
     }
 
@@ -51,6 +61,11 @@ class UsersController extends Controller
 
         if (auth()->attempt($loginFields)) {
             $request->session()->regenerate();
+
+            $redirect = $request->redirect ? $request->redirect : null;
+            if ($redirect) {
+                return Redirect::to($redirect);
+            }
 
             return redirect('/');
         }

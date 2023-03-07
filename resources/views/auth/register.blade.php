@@ -13,6 +13,7 @@
         <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
             <form class="w-full max-w-md" method="POST" action="{{ route('user.store') }}">
                 @csrf
+                <input type="hidden" name="redirect" value="{{$redirect}}">
                 <img class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
     
                 <h1 class="mt-3 mb-8 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign Up</h1>
