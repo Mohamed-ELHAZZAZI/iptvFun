@@ -27,3 +27,8 @@ Route::get('/profile', [UsersController::class, 'showProfile'])->middleware('aut
 Route::post('/logout', [UsersController::class, 'logout'])->middleware('auth')->name('logout');
 Route::post('/user/update/info', [UsersController::class, 'updateInfo'])->middleware('auth')->name('user.update.info');
 Route::post('/user/update/password', [UsersController::class, 'updatePass'])->middleware('auth')->name('user.update.pass');
+
+
+Route::get('/checkout/{slug}', function ($slug) {
+    return view('pages.checkout', ['slug' => $slug]);
+});

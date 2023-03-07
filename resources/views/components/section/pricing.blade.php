@@ -25,7 +25,7 @@
 
                     <x-section.pricing-features :dark="$dark"/>
 
-                    <a href="/checkout" class="w-full flex justify-center px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#f83584] hover:bg-[#dd0066] rounded-md  focus:outline-none">
+                    <a href="@if(auth()->check()) /checkout/@else /login?redirect=checkout/@endif{{$plan->slug}}" class="w-full flex justify-center px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#f83584] hover:bg-[#dd0066] rounded-md  focus:outline-none">
                         Choose plan
                     </a>
                 </div>
