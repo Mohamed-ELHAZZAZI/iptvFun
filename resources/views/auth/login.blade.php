@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Welcome to our IPTV login page! Sign in to access our top-quality streaming services, including the latest TV shows, movies, and more. Our secure and user-friendly login page makes it easy to enjoy your favorite entertainment from anywhere, at any time. With reliable and fast connections, you'll never miss a moment of your favorite content. Join us today and take your IPTV experience to the next level!" >
     <title>Document</title>
     @vite('resources/css/app.css')
 
@@ -14,7 +15,7 @@
             <form class="w-full max-w-md" method="POST" action="{{ route('user.login') }}">
                 @csrf
                 <input type="hidden" name="redirect" value="{{$redirect}}">
-                <img class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
+                <img width="32" height="32" class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
     
                 <h1 class="mt-3 mb-8 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign In</h1>
                 @if (count($errors) != 0)
@@ -33,7 +34,7 @@
                         </svg>
                     </span>
     
-                    <input name="email" type="email" class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Email address" value="{{old('email')}}">
+                    <input name="email" type="email" class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066] dark:focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Email address" value="{{old('email')}}">
                 </div>
     
                 <div class="relative flex items-center mt-4">
@@ -43,7 +44,7 @@
                         </svg>
                     </span>
     
-                    <input name="password" type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
+                    <input name="password" type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066] dark:focus:border-[#dd0066]  focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
                 </div>
     
                 <div class="mt-6">
@@ -65,7 +66,7 @@
                     </a>
     
                     <div class="mt-6 text-center ">
-                        <a href="{{ isset($redirect) ? route('register', ['redirect' => $redirect]) : route('register') }}" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                        <a href="{{ isset($redirect) ? route('register', ['redirect' => $redirect]) : route('register') }}" class="text-sm text-blue-900 hover:underline dark:text-blue-400">
                             Don’t have an account yet? Sign up
                         </a>
                     </div>

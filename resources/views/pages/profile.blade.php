@@ -13,10 +13,10 @@
 @endpush
 
 @section('content')
-<div class="my-10 px-10">
+<div class="my-10 sm:px-10 min-[440px]:px-5 px-3">
     <div class="md:grid md:grid-cols-3 md:gap-6">
       <div class="md:col-span-1">
-        <div class="px-4 sm:px-0">
+        <div class="px-2 min-[440px]:px-4 sm:px-0">
           <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-gray-100">Personal Information</h3>
           <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Provide accurate and up-to-date personal information to ensure that your identity and privacy are protected.</p>
         </div>
@@ -72,10 +72,10 @@
 
 
 
-  <div class="my-10 px-10">
+  <div class="my-10 sm:px-10 min-[440px]:px-5 px-3">
     <div class="md:grid md:grid-cols-3 md:gap-6">
       <div class="md:col-span-1">
-        <div class="px-4 sm:px-0">
+        <div class="px-2 min-[440px]:px-4 sm:px-0">
           <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-gray-100">Change password</h3>
           <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Stay one step ahead of potential security threats by updating your password regularly in your personal information.</p>
         </div>
@@ -134,10 +134,10 @@
     </div>
   </div>
 
-  <div class="my-10 px-10">
+  <div class="my-10 sm:px-10 min-[440px]:px-5 px-2">
     <div class="md:grid md:grid-cols-3 md:gap-6">
       <div class="md:col-span-1">
-        <div class="px-4 sm:px-0">
+        <div class="px-3 min-[440px]:px-4 sm:px-0">
           <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-gray-100">Logout</h3>
           <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Don't be a stranger - come back soon and keep your personal information in tip-top shape!</p>
           <form action="{{route('logout')}}" method="POST">

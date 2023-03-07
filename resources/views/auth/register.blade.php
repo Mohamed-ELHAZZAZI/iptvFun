@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Join our IPTV community today by signing up through our easy and secure registration page! Enjoy access to the latest TV shows, movies, and more, all at your fingertips. Our sign-up process is quick and straightforward, so you can start streaming your favorite content in no time. Plus, our reliable and fast connections ensure a seamless viewing experience, no matter where you are. Don't miss out on the best in IPTV entertainment – sign up now and start streaming!">
     <title>Document</title>
     @vite('resources/css/app.css')
     
 </head>
-<body onload="rr" class="overflow-x-hidden bg-white dark:bg-gray-900">
+<body class="overflow-x-hidden bg-white dark:bg-gray-900">
     <section class="bg-white dark:bg-gray-900 my-6">
         <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
             <form class="w-full max-w-md" method="POST" action="{{ route('user.store') }}">
                 @csrf
                 <input type="hidden" name="redirect" value="{{$redirect}}">
-                <img class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
+                <img width="32" height="32" class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
     
                 <h1 class="mt-3 mb-8 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign Up</h1>
                 @if (count($errors) != 0)
@@ -31,7 +32,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </span>
     
-                    <input name="firstName" type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="First name" value="{{old('firstName')}}">
+                    <input name="firstName" type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066] dark:focus:border-[#dd0066]  focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="First name" value="{{old('firstName')}}">
                 </div>
 
                 <div class="relative flex items-center mt-4 ">
@@ -39,7 +40,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </span>
     
-                    <input name="lastName" type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Last name" value="{{old('lastName')}}">
+                    <input name="lastName" type="text" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066] dark:focus:border-[#dd0066]  focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Last name" value="{{old('lastName')}}">
                 </div>
 
                 <div class="relative flex items-center mt-4">
@@ -49,7 +50,7 @@
                         </svg>
                     </span>
     
-                    <input name="email" type="email" class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Email address" value="{{old('email')}}">
+                    <input name="email" type="email" class="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]  dark:focus:border-[#dd0066] focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Email address" value="{{old('email')}}">
                 </div>
     
                 <div class="relative flex items-center mt-4">
@@ -59,7 +60,7 @@
                         </svg>
                     </span>
     
-                    <input name="password" type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066]   focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
+                    <input name="password" type="password" class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-[#dd0066] dark:focus:border-[#dd0066]  focus:outline-none focus:ring-1 focus:ring-[#dd0066]" placeholder="Password">
                 </div>
                 
                 

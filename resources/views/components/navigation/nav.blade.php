@@ -1,16 +1,16 @@
 <nav class="relative bg-white dark:bg-gray-900">
     <div
-        class="container px-6 py-4 mx-auto flex justify-between items-center sm:gap-3 gap-1"
+        class="container px-3 min-[440px]:px-6 py-4 mx-auto flex justify-between items-center sm:gap-3 gap-1"
     >
         <div class="flex items-center w-full md:w-auto justify-between">
             <a
                 href="#"
-                class="flex items-center gap-2 text-gray-700 dark:text-gray-200 font-bold text-lg"
+                class="flex items-center gap-2 text-gray-700 dark:text-gray-200 font-bold text-base sm:text-lg"
             >
                 <img
                     width="28"
                     height="28"
-                    class="w-auto h-7 sm:h-8"
+                    class="w-auto h-8 sm:h-8"
                     src="{{ asset('/storage/icons/logo.svg') }}"
                     alt=""
                 />
@@ -86,13 +86,13 @@
             </div>
         </div>
         @auth
-        <a href="/profile" class="cursor-pointer ml-auto relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
+        <a href="/profile" aria-label="Profile page" class="mr-3 cursor-pointer ml-auto relative px-5 h-10 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
             <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
         </a>
         @else
         <a
             href="{{route('login')}}"
-            class="w-full ml-auto cursor-pointer px-5 py-2 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#13202e] dark:bg-[#81479e] rounded-lg lg:w-auto dark:hover:bg-[#7c389e] focus:outline-none dark:focus:bg-[#7c389e]"
+            class="ml-auto mr-3 cursor-pointer px-3 min-[440px]:px-5 text-xs py-2 min-[440px]:text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#13202e] dark:bg-[#81479e] rounded-lg lg:w-auto dark:hover:bg-[#7c389e] focus:outline-none dark:focus:bg-[#7c389e]"
         >
             Login
         </a>
