@@ -44,7 +44,7 @@
 
 <x-section.testimonials />
 
-<x-section.pricing />
+<x-section.pricing :plans="$plans" />
 
 <x-section.faq />
 
