@@ -32,15 +32,45 @@ class StripePaymentController extends Controller
      */
     public function stripePost(Request $request)
     {
-        dd($request->all());
+        $plan = IptvPlans::findOrFail($request->plan);
+
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        Stripe\Charge::create([
-            "amount" => 100 * 100,
-            "currency" => "usd",
-            "source" => $request->stripeToken,
-            "description" => "Test payment from LaravelTus.com."
-        ]);
+        try {
+            Stripe\Charge::create([
+                "amount" => $plan->price * 100,
+                "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "Test payment from LaravelTus.com.",
+                'metadata' => [
+                    'email' => auth()->user()->email
+                ]
+            ]);
+        } catch (\Stripe\Exception\CardException $e) {
+            $message = $e->getError()->message;
+            return redirect()->back()->with('error', $message);
+        } catch (\Stripe\Exception\RateLimitException $e) {
+            // rate limit error occurred
+            $message = "Too many requests, please try again later.";
+            return redirect()->back()->with('error', $message);
+        } catch (\Stripe\Exception\InvalidRequestException $e) {
+            // invalid request error occurred
+            $message = $e->getError()->message;
+            return redirect()->back()->with('error', $message);
+        } catch (\Stripe\Exception\AuthenticationException $e) {
+            // authentication error occurred
+            $message = "Authentication error, please try again later.";
+            return redirect()->back()->with('error', $message);
+        } catch (\Stripe\Exception\ApiConnectionException $e) {
+            // API connection error occurred
+            $message = "Network error, please try again later.";
+            return redirect()->back()->with('error', $message);
+        } catch (\Stripe\Exception\ApiErrorException $e) {
+            // generic API error occurred
+            $message = "An error occurred, please try again later.";
+            return redirect()->back()->with('error', $message);
+        }
+
 
         Session::flash('success', 'Payment successful!');
 
