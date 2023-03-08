@@ -48,27 +48,27 @@ class StripePaymentController extends Controller
             ]);
         } catch (\Stripe\Exception\CardException $e) {
             $message = $e->getError()->message;
-            return redirect()->back()->with('error', $message);
+            return redirect()->back()->with('error', $message)->withInput();
         } catch (\Stripe\Exception\RateLimitException $e) {
             // rate limit error occurred
             $message = "Too many requests, please try again later.";
-            return redirect()->back()->with('error', $message);
+            return redirect()->back()->with('error', $message)->withInput();
         } catch (\Stripe\Exception\InvalidRequestException $e) {
             // invalid request error occurred
             $message = $e->getError()->message;
-            return redirect()->back()->with('error', $message);
+            return redirect()->back()->with('error', $message)->withInput();
         } catch (\Stripe\Exception\AuthenticationException $e) {
             // authentication error occurred
             $message = "Authentication error, please try again later.";
-            return redirect()->back()->with('error', $message);
+            return redirect()->back()->with('error', $message)->withInput();
         } catch (\Stripe\Exception\ApiConnectionException $e) {
             // API connection error occurred
             $message = "Network error, please try again later.";
-            return redirect()->back()->with('error', $message);
+            return redirect()->back()->with('error', $message)->withInput();
         } catch (\Stripe\Exception\ApiErrorException $e) {
             // generic API error occurred
             $message = "An error occurred, please try again later.";
-            return redirect()->back()->with('error', $message);
+            return redirect()->back()->with('error', $message)->withInput();
         }
 
 
