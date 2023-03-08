@@ -43,7 +43,8 @@ class StripePaymentController extends Controller
                 "source" => $request->stripeToken,
                 "description" => "Test payment from LaravelTus.com.",
                 'metadata' => [
-                    'email' => auth()->user()->email
+                    'email' => auth()->user()->email,
+                    'user_uuid' => auth()->user()->user_uuid
                 ]
             ]);
         } catch (\Stripe\Exception\CardException $e) {
