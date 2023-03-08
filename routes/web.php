@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StripePaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,7 @@ Route::post('/user/update/password', [UsersController::class, 'updatePass'])->mi
 Route::get('/checkout/{slug}', function ($slug) {
     return view('pages.checkout', ['slug' => $slug]);
 });
+
+
+Route::get('checkout/{slug}', [StripePaymentController::class, 'stripe'])->middleware('auth');
+Route::post('checkout', [StripePaymentController::class, 'stripePost'])->middleware('auth')->name('checkout.post');
