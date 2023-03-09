@@ -11,6 +11,8 @@ class Payment extends Model
 
     protected $fillable = [
         'user_uuid',
+        'cardHolder',
+        'email',
         'iptv_plans_id',
         'mac_address',
         'ip_address',
@@ -23,7 +25,8 @@ class Payment extends Model
         'card_id',
         'country',
         'card_brand',
-        'last4'
+        'last4',
+        'token'
     ];
 
     public function user()

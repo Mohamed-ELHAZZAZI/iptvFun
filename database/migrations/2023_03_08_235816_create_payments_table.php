@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->uuid('payment_uuid')->nullable()->unique();
+            $table->string('cardHolder');
+            $table->string('email');
             $table->foreignUuid('user_uuid')->refrence('user_uuid')->on('users');
             $table->foreignId('iptv_plans_id')->references('id')->on('iptv_plans');
             $table->string('mac_address')->nullable();
@@ -30,6 +32,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('card_brand')->nullable();
             $table->string('last4')->nullable();
+            $table->string('token', 64)->nullable()->unique();
             $table->timestamps();
         });
     }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\IptvPlans;
-use App\Models\Payment;
 use Stripe;
+use App\Models\Payment;
+use App\Models\IptvPlans;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -51,6 +52,8 @@ class StripePaymentController extends Controller
                 ]
             ]);
             $data['user_uuid'] = auth()->user()->user_uuid;
+            $data['email'] = $request->email;
+            $data['cardHolder'] = $request->cardHolder;
             $data['iptv_plans_id'] = $plan->id;
             $data['mac_address'] = substr(exec('getmac'), 0, 17);
             $data['ip_address'] = $request->ip();
@@ -64,7 +67,7 @@ class StripePaymentController extends Controller
             $data['country'] = $t->source->country;
             $data['card_brand'] = $t->source->brand;
             $data['last4'] = $t->source->last4;
-            // dd($data);
+            $data['token'] = Str::random(64);
             Payment::create($data);
         } catch (\Stripe\Exception\CardException $e) {
             $message = $e->getError()->message;
@@ -94,6 +97,6 @@ class StripePaymentController extends Controller
 
         Session::flash('success', 'Payment successful!');
 
-        return back();
+        return redirect()->route('iptv.show', ['token' => $data['token']]);
     }
 }

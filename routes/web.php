@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IptvController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\StripePaymentController;
 
@@ -37,3 +38,4 @@ Route::get('/checkout/{slug}', function ($slug) {
 
 Route::get('checkout/{slug}', [StripePaymentController::class, 'stripe'])->middleware('auth');
 Route::post('checkout', [StripePaymentController::class, 'stripePost'])->middleware('auth')->name('checkout.post');
+Route::get('/iptv/{token}', [IptvController::class, 'show'])->middleware('auth')->name('iptv.show');
