@@ -35,7 +35,7 @@
             </div>
             <div class="bg-gray-50 dark:bg-[#131d2c] dark:border-t-[#232b3a] px-4 py-5 sm:grid sm:grid-cols-3 border-t sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500 dark:text-gray-300">Payment method</dt>
-              <dd class="mt-1 text-sm text-gray-900 dark:text-gray-50 sm:col-span-2 sm:mt-0">{{ preg_replace('/\B([A-Z])/', ' $1', $payment->card_brand) }} ... {{$payment->last4}}</dd>
+              <dd class="mt-1 text-sm text-gray-900 dark:text-gray-50 sm:col-span-2 sm:mt-0 flex"><img src="{{asset('storage/icons/payments/'.str_replace(' ', '-',$payment->card_brand).'.svg')}}" alt="{{$payment->card_brand}} icon" class="mr-2"> •••• {{$payment->last4}}</dd>
             </div>
             <div class="bg-white dark:bg-gray-900 dark:border-t-[#232b3a] px-4 py-5 sm:grid sm:grid-cols-3 border-t sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500 dark:text-gray-300">Paid at </dt>
