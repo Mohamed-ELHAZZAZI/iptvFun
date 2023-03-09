@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->uuid('payment_uuid')->nullable()->unique();
             $table->foreignUuid('user_uuid')->refrence('user_uuid')->on('users');
             $table->foreignId('iptv_plans_id')->references('id')->on('iptv_plans');
             $table->string('mac_address')->nullable();
