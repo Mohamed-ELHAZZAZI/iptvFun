@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\IptvPlans;
+use App\Models\Payment;
 use Stripe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -37,7 +38,7 @@ class StripePaymentController extends Controller
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
         try {
-            Stripe\Charge::create([
+            $t = Stripe\Charge::create([
                 "amount" => $plan->price * 100,
                 "currency" => "usd",
                 "source" => $request->stripeToken,
@@ -49,6 +50,22 @@ class StripePaymentController extends Controller
                     'mac_address' => substr(exec('getmac'), 0, 17)
                 ]
             ]);
+            $data['user_uuid'] = auth()->user()->user_uuid;
+            $data['iptv_plans_id'] = $plan->id;
+            $data['mac_address'] = substr(exec('getmac'), 0, 17);
+            $data['ip_address'] = $request->ip();
+            $data['amount'] = $t->amount;
+            $data['payment_id'] = $t->id;
+            $data['status'] = $t->status;
+            $data['receipt'] = $t->receipt_url;
+            $data['risk_score'] = $t->outcome->risk_score;
+            $data['risk_level'] = $t->outcome->risk_level;
+            $data['card_id'] = $t->source->id;
+            $data['country'] = $t->source->country;
+            $data['card_brand'] = $t->source->brand;
+            $data['last4'] = $t->source->last4;
+            // dd($data);
+            Payment::create($data);
         } catch (\Stripe\Exception\CardException $e) {
             $message = $e->getError()->message;
             return redirect()->back()->with('error', $message)->withInput();

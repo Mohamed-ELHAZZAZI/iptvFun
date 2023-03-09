@@ -15,4 +15,9 @@ class IptvPlans extends Model
         'type',
         'sluck'
     ];
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }
