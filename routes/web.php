@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IptvController;
@@ -50,5 +51,17 @@ Route::name('user.')->group(function () {
         Route::get('checkout/{slug}', [StripePaymentController::class, 'stripe']);
         Route::post('checkout', [StripePaymentController::class, 'stripePost'])->name('checkout.post');
         Route::get('/iptv/{token}', [IptvController::class, 'show'])->name('iptv.show');
+    });
+});
+
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware(['guest:admin'])->group(function () {
+        Route::view('/login', 'admin.login')->name('login');
+        Route::post('/check', [AdminController::class, 'check'])->name('check');
+    });
+
+    Route::middleware(['auth:admin'])->group(function () {
+        Route::view('/home', 'admin.home')->name('home');
     });
 });
