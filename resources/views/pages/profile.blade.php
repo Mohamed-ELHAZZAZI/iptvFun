@@ -140,7 +140,7 @@
         <div class="px-3 min-[440px]:px-4 sm:px-0">
           <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-gray-100">Logout</h3>
           <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Don't be a stranger - come back soon and keep your personal information in tip-top shape!</p>
-          <form action="{{route('logout')}}" method="POST">
+          <form action="{{route('user.logout')}}" method="POST">
             @csrf
             <button class="inline-flex justify-center rounded-md bg-[#dd0066] py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-[#f83584] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f83584] w-full mt-3">Logout</button>
           </form>

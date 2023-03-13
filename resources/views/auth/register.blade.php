@@ -84,7 +84,7 @@
                     </a>
     
                     <div class="mt-6 text-center ">
-                        <a href="{{ route('login') }}" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                        <a href="{{ route('user.login') }}" class="text-sm text-blue-500 hover:underline dark:text-blue-400">
                             Already have an account? Sign in
                         </a>
                     </div>

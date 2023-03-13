@@ -12,7 +12,7 @@
 <body class="overflow-x-hidden bg-white dark:bg-gray-900">
     <section class="bg-white dark:bg-gray-900 ">
         <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
-            <form class="w-full max-w-md" method="POST" action="{{ route('user.login') }}">
+            <form class="w-full max-w-md" method="POST" action="{{ route('user.auth.check') }}">
                 @csrf
                 <input type="hidden" name="redirect" value="{{$redirect}}">
                 <img width="32" height="32" class="w-auto h-8 sm:h-10" src="{{ asset('/storage/icons/logo.svg') }}" alt="">
@@ -66,7 +66,7 @@
                     </a>
     
                     <div class="mt-6 text-center ">
-                        <a href="{{ isset($redirect) ? route('register', ['redirect' => $redirect]) : route('register') }}" class="text-sm text-blue-900 hover:underline dark:text-blue-400">
+                        <a href="{{ isset($redirect) ? route('user.register', ['redirect' => $redirect]) : route('user.register') }}" class="text-sm text-blue-900 hover:underline dark:text-blue-400">
                             Don’t have an account yet? Sign up
                         </a>
                     </div>

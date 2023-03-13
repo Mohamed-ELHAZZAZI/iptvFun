@@ -17,25 +17,38 @@ use App\Http\Controllers\StripePaymentController;
 |
 */
 
+
+
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
-Route::get('/login', [UsersController::class, 'showLogin'])->middleware('guest')->name('login');
-Route::get('/register', [UsersController::class, 'showRegister'])->middleware('guest')->name('register');
-Route::post('/user/store', [UsersController::class, 'store'])->middleware('guest')->name('user.store');
-Route::post('/user/login', [UsersController::class, 'authenticate'])->middleware('guest')->name('user.login');
-
-Route::get('/profile', [UsersController::class, 'showProfile'])->middleware('auth')->name('profile');
-Route::post('/logout', [UsersController::class, 'logout'])->middleware('auth')->name('logout');
-Route::post('/user/update/info', [UsersController::class, 'updateInfo'])->middleware('auth')->name('user.update.info');
-Route::post('/user/update/password', [UsersController::class, 'updatePass'])->middleware('auth')->name('user.update.pass');
+Route::name('user.')->group(function () {
+    Route::middleware(['guest'])->group(function () {
+        Route::get('/login', [UsersController::class, 'showLogin'])->name('login');
+        Route::get('/register', [UsersController::class, 'showRegister'])->name('register');
+        Route::post('/user/store', [UsersController::class, 'store'])->name('store');
+        Route::post('/user/login', [UsersController::class, 'authenticate'])->name('auth.check');
+    });
 
 
-Route::get('/checkout/{slug}', function ($slug) {
-    return view('pages.checkout', ['slug' => $slug]);
+    Route::middleware(['auth'])->group(function () {
+
+        Route::get('/profile', [UsersController::class, 'showProfile'])->name('profile');
+        Route::post('/logout', [UsersController::class, 'logout'])->name('logout');
+        Route::post('/user/update/info', [UsersController::class, 'updateInfo'])->name('update.info');
+        Route::post('/user/update/password', [UsersController::class, 'updatePass'])->name('update.pass');
+
+
+        Route::get('/checkout/{slug}', function ($slug) {
+            return view('pages.checkout', ['slug' => $slug]);
+        });
+
+
+        Route::get('checkout/{slug}', [StripePaymentController::class, 'stripe']);
+        Route::post('checkout', [StripePaymentController::class, 'stripePost'])->name('checkout.post');
+        Route::get('/iptv/{token}', [IptvController::class, 'show'])->name('iptv.show');
+    });
 });
-
-
-Route::get('checkout/{slug}', [StripePaymentController::class, 'stripe'])->middleware('auth');
-Route::post('checkout', [StripePaymentController::class, 'stripePost'])->middleware('auth')->name('checkout.post');
-Route::get('/iptv/{token}', [IptvController::class, 'show'])->middleware('auth')->name('iptv.show');

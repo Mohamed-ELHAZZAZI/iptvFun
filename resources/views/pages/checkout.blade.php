@@ -3,7 +3,7 @@
 
 <form
 role="form" 
-action="{{ route('checkout.post') }}" 
+action="{{ route('user.checkout.post') }}" 
 method="post" 
 id="payment-form"
 class="my-10 px-4 pt-8 max-w-lg mx-auto require-validation"

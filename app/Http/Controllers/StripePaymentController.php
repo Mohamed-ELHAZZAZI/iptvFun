@@ -97,6 +97,6 @@ class StripePaymentController extends Controller
 
         Session::flash('success', 'Payment successful!');
 
-        return redirect()->route('iptv.show', ['token' => $data['token']]);
+        return redirect()->route('user.iptv.show', ['token' => $data['token']]);
     }
 }

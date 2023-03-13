@@ -86,12 +86,12 @@
             </div>
         </div>
         @auth
-        <a href="/profile" aria-label="Profile page" class="mr-3 cursor-pointer ml-auto relative px-5 h-10 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
+        <a href="{{route('user.profile')}}" aria-label="Profile page" class="mr-3 cursor-pointer ml-auto relative px-5 h-10 overflow-hidden bg-gray-200 rounded-full dark:bg-gray-600">
             <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
         </a>
         @else
         <a
-            href="{{route('login')}}"
+            href="{{route('user.login')}}"
             class="ml-auto mr-3 cursor-pointer px-3 min-[440px]:px-5 text-xs py-2 min-[440px]:text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-[#13202e] dark:bg-[#81479e] rounded-lg lg:w-auto dark:hover:bg-[#7c389e] focus:outline-none dark:focus:bg-[#7c389e]"
         >
             Login
