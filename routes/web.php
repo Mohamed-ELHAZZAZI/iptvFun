@@ -61,7 +61,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/check', [AdminController::class, 'check'])->name('check');
     });
 
-    Route::middleware(['auth:admin'])->group(function () {
-        Route::view('/home', 'admin.home')->name('home');
-    });
+    // Route::middleware(['auth:admin'])->group(function () {
+    //     Route::view('/home', 'admin.home')->name('home');
+    // });
+    Route::get('/{vue_capture?}', function () {
+        return view('admin.home');
+    })->where('vue_capture', '[\/\w\.-]*');
 });
