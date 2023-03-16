@@ -8,18 +8,25 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function check(Request $request)
+    public function login(Request $request)
     {
-        $loginFields = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => 'required',
-        ]);
-        if (Auth::guard('admin')->attempt($loginFields)) {
-            return redirect()->route('admin.home');
-        }
-        return back()->withErrors(['email' => 'Invalid Credentials'])->withInput($request->only('email'));
-    }
+        if (Auth::guard('admin')->attempt(["email" => $request->email, 'password' => $request->password])) {
+            /** @var \App\Models\user $user */
+            $user = Auth::guard('admin')->user();
+            $token = $user->createToken('main')->plainTextToken;
+            unset($user['created_at'], $user['updated_at'], $user['email_verified_at']);
 
+            return response()->json([
+                'user' => $user,
+                'token' => $token,
+                'success' => true
+            ]);
+        }
+        return response()->json([
+            'error' => 'The provided credentials are not correct',
+            'success' => false
+        ]);
+    }
 
     public function logout()
     {
