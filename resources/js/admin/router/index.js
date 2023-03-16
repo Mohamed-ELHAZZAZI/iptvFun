@@ -6,16 +6,14 @@ import login from "../views/login.vue";
 let admin = "/admin/";
 const routes = [
     {
-        path: admin + "dashboard",
-        component: dashboard,
+        path: admin + "/",
+        redirect: admin + "users",
         meta: { RequiresAuth: true },
         name: "adminDashboard",
-    },
-    {
-        path: admin + "users",
-        component: users,
-        meta: { RequiresAuth: true },
-        name: "adminUsers",
+        component: dashboard,
+        children: [
+            { path: admin + "users", name: "adminUsers", component: users },
+        ],
     },
     {
         path: admin + "login",
